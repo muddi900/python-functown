@@ -2,13 +2,18 @@
 Bunch of Handler Code for Arguments
 '''
 
-
+from enum import Enum
 from distutils.util import strtobool
 import logging
 
 from azure.functions import HttpRequest
 
 from functown.errors import ArgError
+
+
+class RequestHeaders(Enum):
+    "Standard Request Headers as an Enum"
+    CONTENT_TYPE = 'content_type'
 
 
 class RequestArgHandler():
