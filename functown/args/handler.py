@@ -103,3 +103,7 @@ class RequestArgHandler():
             raise ArgError(f"File {name} could not be parsed")
 
         return file
+
+    def get_header(self, header: RequestHeaders):
+        headers = self.req.headers
+        return headers.get(header)
